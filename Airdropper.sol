@@ -36,9 +36,9 @@ contract Airdropper {
         return true;
     }
 
-    function getAllowance(address _tokenAddress) public view returns(uint256 balance_) {
+    function getAllowance(address _owner, address _tokenAddress) public view returns(uint256 balance_) {
         Token token = Token(_tokenAddress);
-        return token.allowance(msg.sender, address(this));
+        return token.allowance(_owner, address(this));
     }
 
 }
